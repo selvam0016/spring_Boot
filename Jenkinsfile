@@ -1,6 +1,6 @@
 node{
     stage("git clone"){
-        git credentialsId: 'git_Cred', url: 'https://github.com/selvam0016/mithun_spring-boot-mongo-docker.git'
+        git credentialsId: 'git_Cred', url: 'https://github.com/selvam0016/spring_Boot.git'
     }
     stage("maven clean build"){
         def mavenHome = tool name: "mymaven", type: "maven"
