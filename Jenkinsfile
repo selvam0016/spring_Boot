@@ -8,13 +8,13 @@ node{
         sh "${mavenCMD} clean package"
     }
     stage("docker build"){
-        sh "docker build -t devopslearner16/spring-boot-mongo ."
+        sh "docker build -t devopslearner16/spring-boot ."
     }
     stage("Docker Push"){
     withCredentials([string(credentialsId: 'Docker_Cred', variable: 'Docker_Cred')]) {
     sh "docker login -u devopslearner16 -p ${Docker_Cred}"
     } 
-     sh "docker push devopslearner16/spring-boot-mongo"
+     sh "docker push devopslearner16/spring-boot"
       }
     stage("Deploy app in to K8s"){
         kubernetesDeploy(
