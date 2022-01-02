@@ -11,8 +11,7 @@ services:
     depends_on:
       - mongo
     deploy:  # This will be considered only in docker swarm.
-      replicas: 3
-      update_config:
+      replicas: 22      update_config:
         parallelism: 1
         delay: 20s
       restart_policy:
